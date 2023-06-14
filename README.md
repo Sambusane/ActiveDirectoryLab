@@ -30,8 +30,22 @@
     the users password hash and then we will use another
     package called John-The-Ripper to crack the password
     hash.
+    The first step was to setup the network and load responder on the Kali machine.
 
-    ![Setting up Responder](https://i.imgur.com/gJ2dkBd.jpg)
+![Setting up Responder](https://i.imgur.com/gJ2dkBd.jpg)
+*Responder Setup*
+
+    From that point I had to look up a file on a user machine with a typo, this simulates an activity that could happen on any network when a user mistypes a domain or file location. Once this happens Responder will listen for the broadcast and capture it.
+
+![Responder listening for Hash](https://i.imgur.com/aMfjqC9.jpg)
+*Responder Listening for Broadcasts*
+
+    Once the hash is captured we can then use John to crack the password.
+
+![Using John The Ripper to crack hash](https://i.imgur.com/HWkzXgt.jpg)
+*Using John to crack hash*
+
+    Since this was a pen testing lab I did not choose complex passwords, so John had no issues cracking the hash and giving me the user and their password.
 
 
 
